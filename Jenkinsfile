@@ -10,15 +10,15 @@ node {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github-initcron', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
-                        sh "git config user.email nmendozac@gmail.com"
-                        sh "git config user.name Niko"
-                        sh "git switch main"
-                        sh "cat vote-ui-deployment.yaml"
-                        sh "sed -i 's+nmendozac/vote.*+nmendozac/vote:${DOCKERTAG}+g' vote-ui-deployment.yaml"
-                        sh "cat vote-ui-deployment.yaml"
-                        sh "git add ."
-                        sh "git commit -m 'Done by Jenkins Job deployment: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/vote-deploy.git HEAD:main"
+                        //sh "git config user.email nmendozac@gmail.com"
+                       // sh "git config user.name Niko"
+                       // sh "git switch main"
+                       // sh "cat vote-ui-deployment.yaml"
+                      //  sh "sed -i 's+nmendozac/vote.*+nmendozac/vote:${DOCKERTAG}+g' vote-ui-deployment.yaml"
+                      //  sh "cat vote-ui-deployment.yaml"
+                       // sh "git add ."
+                      //  sh "git commit -m 'Done by Jenkins Job deployment: ${env.BUILD_NUMBER}'"
+                     //   sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/vote-deploy.git HEAD:main"
       }
     }
   }
