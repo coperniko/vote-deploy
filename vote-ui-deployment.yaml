@@ -14,7 +14,7 @@ spec:
         app: vote-ui
     spec:
       containers:
-      - image: docker.io/nmendozac/vote:4d5f2ee7a023d3f1f67d78aae7a0ba9aa6d92d9f
+      - image: docker.io/nmendozac/vote:latest
         name: vote-ui
         ports:
         - containerPort: 80
